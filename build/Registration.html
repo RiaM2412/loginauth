@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        form{
+            background-color: white;
+            text-align: center;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #f2f6ff;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+        body{
+            background-color: #f2f6ff;
+            margin: 0px;
+            padding: 16px;
+        }
+        .social-icon{
+            width: 50px;
+            height: 50px;
+            padding-top: 16px ;
+            padding-bottom: 16px;
+            padding-left: 32px ;
+            padding-right: 32px;
+        }
+        #form-heading{
+            font-size: 32px;
+            padding-top: 56px;
+            padding-bottom: 32px;
+        }
+        #social-wrapper{
+            background-color:#f2f6ff;
+            padding: 24px;
+
+        }
+        #input-wrapper{
+            padding-top: 80px;
+            padding-bottom: 40px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+        .input-box{
+            font-size: 18px;
+            padding-bottom: 12px;
+            margin-bottom: 36px;
+            border-top: 0px;
+            border-left: 0px;
+            border-right: 0px;
+            border-bottom: 1px solid #ccc;
+            width: 100%;
+        }
+        #btn-submit{
+            background-color: #0056ff;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            margin-bottom: 24px;
+        }
+    </style>
+    <script>
+        function validate(){
+            var email = document.myform.email.value;
+            var password = document.myform.password.value;
+            var confirmpassword = document.myform.confirmpassword.value;
+            if(email==""){
+                alert("emailis mandatory");
+                return false;
+            }else if(password==""){
+                alert("password mandatory");
+                return false;
+            }else if(password!=confirmpassword){
+                alert("password didnt match")
+                return false;
+            } else{
+                alert("validation Successful");
+                return true;
+            }
+            
+        }
+         
+
+    </script>
+</head>
+<body>
+    <form id="form-regi"name="myform" onsubmit="return validate()">
+        <h1 id="form-heading">Register</h1>
+        <div id="input-wrapper">
+            <div>
+                <input id="username" class="input-box" type="text" name="Username" placeholder="User name">
+            </div>
+            <div>
+                <input id="email" class="input-box" type="email" name="email" placeholder="E-mail">
+            </div>
+            <div>
+                <input id="password" class="input-box" type="password" name="password" placeholder="password">
+            </div>
+            <div>
+                <input id="confirmpassword" class="input-box" type="password" name="confirmpassword" placeholder="confirm-password">
+            </div>
+
+        </div>
+        <input id="btn-submit" type="submit" value="Register">
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-analytics.js"></script>
+
+    <script src="/main.js"></script>
+
+</body>
+</html>
